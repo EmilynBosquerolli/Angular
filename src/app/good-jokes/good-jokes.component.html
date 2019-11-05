@@ -1,0 +1,23 @@
+
+<button routerLink ="">HOME</button>
+<button (click)= "getAJokeByCategory()">GET JOKE</button>
+<button (click)= "goodJokes()">SAVE JOKE</button>
+
+<select [(ngModel)]="selectedCategory">
+    <option *ngFor="let cat of categories" [value]="cat">
+            {{cat}}
+    </option>
+</select>
+
+{{chuckJ}}
+<div *ngIf= "goodJok.length>0">
+    <h3>GOOD JOKES</h3>
+    <div *ngFor="let joke of goodJok; let i=index">
+            {{joke}}  <button (click)= "removeJoke(i)">-</button>
+    </div>
+</div>
+
+
+
+
+
